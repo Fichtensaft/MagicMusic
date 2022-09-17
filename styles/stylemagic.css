@@ -1,0 +1,54 @@
+body{
+    background-color: black;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+.upper_row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+
+.bottom_row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+/* Классы кнопок, хз, нужны ли */
+.button_ramm {
+    width: 25%;
+    height: 25%;
+    background-color: royalblue;
+}
+
+.button_eli {
+    width: 25%;
+    height: 25%;
+    background-color: rebeccapurple;
+}
+
+.button_kaj {
+    width: 25%;
+    height: 25%;
+    background-color: green;
+}
+
+.button_4 {
+    height: 25%;
+    width: 25%;
+    background-color: yellow;
+}
