@@ -12,10 +12,12 @@ def sorting_hat(songs_list: list, db_connection, db_cursor) -> None:
             choice = input(f'Enter the number:\n1 - Red button (bad)'
                            f'\n2- Yellow button (good)'
                            f'\n3 - Violet button(best)'
-                           f'\n4 - Black button (skull)'
+                           f'\n4 - Pink button (Lindemann)'
+                           f'\n5 - Just blue (bad lindemann)'
+                           f'\n6 - Black button (scythe)'
                            f'\n: ')
 
-            insertion = """INSERT INTO eli_songs 
+            insertion = """INSERT INTO ramm_songs 
             (a_song, blue_button, red_button, green_button, orange_button, violet_button, pink_button, black_button)
              VALUES (?, ?, ?, ?, ?, ?, ?, ?)"""
             if choice == '1':
@@ -25,6 +27,10 @@ def sorting_hat(songs_list: list, db_connection, db_cursor) -> None:
             elif choice == '3':
                 button_tuple = (i_song, True, False, True, True, True, False, False)
             elif choice == '4':
+                button_tuple = (i_song, True, False, False, False, False, True, False)
+            elif choice == '5':
+                button_tuple = (i_song, True, False, False, False, False, False, False)
+            elif choice == '6':
                 button_tuple = (i_song, True, False, False, False, False, False, True)
 
             else:
@@ -33,4 +39,3 @@ def sorting_hat(songs_list: list, db_connection, db_cursor) -> None:
             db_cursor.execute(insertion, button_tuple)
             db_connection.commit()
             next_step_check = False
-
