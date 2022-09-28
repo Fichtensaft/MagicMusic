@@ -17,21 +17,27 @@ def sorting_hat(songs_list: list, db_connection, db_cursor) -> None:
                            f'\n6 - Black button (scythe)'
                            f'\n: ')
 
-            insertion = """INSERT INTO ramm_songs 
+            insertion = """INSERT INTO eli_songs 
             (a_song, blue_button, red_button, green_button, orange_button, violet_button, pink_button, black_button)
              VALUES (?, ?, ?, ?, ?, ?, ?, ?)"""
             if choice == '1':
                 button_tuple = (i_song, True, True, True, False, False, False, False)
+                print(f"{i_song} has been added to Red button (bad)\n\n")
             elif choice == '2':
                 button_tuple = (i_song, True, False, True, True, False, False, False)
+                print(f"{i_song} has been added to Yellow button (good)\n\n")
             elif choice == '3':
                 button_tuple = (i_song, True, False, True, True, True, False, False)
+                print(f"{i_song} has been added to Violet button(best)\n\n")
             elif choice == '4':
                 button_tuple = (i_song, True, False, False, False, False, True, False)
+                print(f"{i_song} has been added to ink button (Lindemann)\n\n")
             elif choice == '5':
                 button_tuple = (i_song, True, False, False, False, False, False, False)
+                print(f"{i_song} has been added to Just blue (bad lindemann)\n\n")
             elif choice == '6':
                 button_tuple = (i_song, True, False, False, False, False, False, True)
+                print(f"{i_song} has been added to Skull")
 
             else:
                 print('Неверный ввод')
